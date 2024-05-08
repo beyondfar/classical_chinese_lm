@@ -1,0 +1,13 @@
+训练集：
+    train has 75847177 tokens
+    val has 8243386 tokens
+1. model parameter:
+           n_layer = 8
+           n_head = 8
+           n_embd = 512
+           dropout = 0.2
+           learning_rate = 1e-3
+           batch_size = 64
+           gradient_accumulation_steps = 2
+best loss:
+           step 67000: train loss 3.5535, val loss 3.7800
