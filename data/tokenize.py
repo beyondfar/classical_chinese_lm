@@ -2,11 +2,11 @@ import sentencepiece as spm
 import numpy as np
 
 # train spm tokenizer with vacabulary size 10000
-spm.SentencePieceTrainer.train(input='classical_articals.txt',model_prefix='classical_tokenizer',vocab_size=10000)
+spm.SentencePieceTrainer.train(input='classical_articals.txt', model_prefix='classical_tokenizer', normalization_rule_name='identity', vocab_size=10000)
 
 # load trained tokenizer model
 sp = spm.SentencePieceProcessor(model_file='classical_tokenizer.model')
-with open('classical_articals.txt','r',encoding='utf-8') as f:
+with open('classical_articals.txt', 'r', encoding='utf-8') as f:
     data = f.read()
 
 n = len(data)
