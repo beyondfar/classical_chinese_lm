@@ -84,7 +84,7 @@ current_dir = os.getcwd()
 rootDir = os.path.join(current_dir, "Classical-Modern/古文原文")
 files = iterate_files(rootDir)
 
-outPutFile = os.path.join(current_dir, "classical_articals.txt")
+outPutFile = os.path.join(current_dir, "classical_corpus/classical_articals.txt")
 
 with open(outPutFile, 'w') as outFile:
     for file in files:

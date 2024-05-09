@@ -2,11 +2,11 @@ import sentencepiece as spm
 import numpy as np
 
 # train spm tokenizer with vacabulary size 10000
-spm.SentencePieceTrainer.train(input='classical_articals.txt', model_prefix='classical_tokenizer', normalization_rule_name='identity', vocab_size=10000)
+spm.SentencePieceTrainer.train(input='classical_corpus/classical_articals.txt', model_prefix='classical_tokenizer', normalization_rule_name='identity', vocab_size=10000)
 
 # load trained tokenizer model
 sp = spm.SentencePieceProcessor(model_file='classical_tokenizer.model')
-with open('classical_articals.txt', 'r', encoding='utf-8') as f:
+with open('classical_corpus/classical_articals.txt', 'r', encoding='utf-8') as f:
     data = f.read()
 
 n = len(data)
@@ -22,5 +22,5 @@ print(f"val has {len(val_ids)} tokens")
 # export to bin files
 train_ids = np.array(train_ids, dtype=np.uint16)
 val_ids = np.array(val_ids, dtype=np.uint16)
-train_ids.tofile('train.bin')
-val_ids.tofile('val.bin')
+train_ids.tofile('classical_corpus/train.bin')
+val_ids.tofile('classical_corpus/val.bin')
