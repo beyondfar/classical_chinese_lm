@@ -54,7 +54,8 @@ if compile:
     model = torch.compile(model) # requires PyTorch 2.0 (optional)
 
 # load tokenizer
-sp = spm.SentencePieceProcessor(model_file='/Users/beyondfar/Projects/classical_chinese_lm/data/classical_tokenizer.model')
+
+sp = spm.SentencePieceProcessor(model_file='data/classical_tokenizer.model')
 encode = lambda s: sp.encode(s)
 decode = lambda l: sp.decode(l)
 
